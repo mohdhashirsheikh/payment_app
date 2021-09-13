@@ -24,12 +24,12 @@ class _BottomBarState extends State<BottomBar> {
   Widget build(BuildContext context) {
     return ConvexAppBar(
         onTap: (index) {
-          screen[index];
+          //screen[index];
           print(index);
         },
         style: TabStyle.fixed,
         color: Colors.white,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue[800],
         curveSize: 80,
         activeColor: Colors.yellow,
         items: [

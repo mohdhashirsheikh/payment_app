@@ -83,119 +83,106 @@ class _RechargeHomeState extends State<RechargeHome> {
                             hintText: "Enter Mobile Number"),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              height: 40,
-                              margin: EdgeInsets.symmetric(horizontal: 10),
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.only(left: 20),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(35),
-                                color: Colors.white,
-                                border: Border.all(color: Colors.black12),
-                              ),
-                              child: DropdownButton<String>(
-                                isExpanded: true,
-                                underline: SizedBox(),
-                                hint: Text("Select Operators"),
-                                items: circleName
-                                    .map((String item) =>
-                                        DropdownMenuItem<String>(
-                                          value: item,
-                                          child: Text(item),
-                                        ))
-                                    .toList(),
-                                value: operator,
-                                onChanged: (String value) {
-                                  setState(() {
-                                    operator = value;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Container(
-                              height: 40,
-                              margin: EdgeInsets.symmetric(horizontal: 10),
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.only(left: 20),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(35),
-                                color: Colors.white,
-                                border: Border.all(color: Colors.black12),
-                              ),
-                              child: DropdownButton<String>(
-                                isExpanded: true,
-                                underline: SizedBox(),
-                                hint: Text("Select Circle"),
-                                items: <String>[
-                                  "Uttar Pradesh East",
-                                  "Tamilnadu",
-                                  "Punjab",
-                                  "Assam",
-                                  "Bihar & Jharkhand",
-                                  "Chennai",
-                                  "Gujrat"
-                                ].map<DropdownMenuItem<String>>((String value) {
-                                  return DropdownMenuItem<String>(
-                                    child: ListTile(
-                                      title: Text(
-                                        value,
-                                        style: TextStyle(),
-                                      ),
-                                      leading: Icon(Icons.home),
-                                    ),
-                                    value: value,
-                                  );
-                                }).toList(),
-                                value: circle,
-                                onChanged: (String value) {
-                                  setState(() {
-                                    circle = value;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
+                    SizedBox(height: 20),
+                    Container(
+                      height: 60,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black12),
+                      ),
+                      child: DropdownButton<String>(
+                        isExpanded: true,
+                        underline: SizedBox(),
+                        hint: Text("Select Operators"),
+                        items: circleName
+                            .map((String item) => DropdownMenuItem<String>(
+                                  value: item,
+                                  child: Text(item),
+                                ))
+                            .toList(),
+                        value: operator,
+                        onChanged: (String value) {
+                          setState(() {
+                            operator = value;
+                          });
+                        },
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
-                      child: Container(
-                        height: 60,
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(left: 20),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(35),
-                          color: Colors.white,
-                          border: Border.all(color: Colors.black12),
-                        ),
-                        child: TextFormField(
-                          onChanged: (value) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ContactsPage()));
-                          },
-                          keyboardType: TextInputType.number,
-                          controller: amount,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              icon: Image.asset(
-                                "assets/images/rupee.png",
-                                height: 25,
-                                width: 25,
-                                color: Colors.black54,
+                    SizedBox(height: 20),
+                    Container(
+                      height: 60,
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black12),
+                      ),
+                      child: DropdownButton<String>(
+                        isExpanded: true,
+                        underline: SizedBox(),
+                        hint: Text("Select Circle"),
+                        items: <String>[
+                          "Uttar Pradesh East",
+                          "Tamilnadu",
+                          "Punjab",
+                          "Assam",
+                          "Bihar & Jharkhand",
+                          "Chennai",
+                          "Gujrat"
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            child: ListTile(
+                              title: Text(
+                                value,
+                                style: TextStyle(),
                               ),
-                              hintText: "Enter Amount"),
-                        ),
+                              leading: Icon(Icons.home),
+                            ),
+                            value: value,
+                          );
+                        }).toList(),
+                        value: circle,
+                        onChanged: (String value) {
+                          setState(() {
+                            circle = value;
+                          });
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      height: 60,
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.only(left: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        color: Colors.white,
+                        border: Border.all(color: Colors.black12),
+                      ),
+                      child: TextFormField(
+                        onChanged: (value) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ContactsPage()));
+                        },
+                        keyboardType: TextInputType.number,
+                        controller: amount,
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            icon: Image.asset(
+                              "assets/images/rupee.png",
+                              height: 25,
+                              width: 25,
+                              color: Colors.black54,
+                            ),
+                            hintText: "Enter Amount"),
                       ),
                     ),
                   ],
